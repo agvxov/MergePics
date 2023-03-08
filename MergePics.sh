@@ -20,7 +20,7 @@ function usage() {
 	echo -e "	-i [path] : specifies input directory name"
 	echo -e "	-o [file] : specifies output name"
 	echo -e "	-v        : vertical mode (default)"
-	echo -e "	-h        : horizontal mode"
+	echo -e "	-p        : plain (horizontal) mode"
 #	echo -e "	-d        : delete input files"
 	echo ""
 	echo -e "${YELLOW}${BLUE}$$PWD${BLUE} is considered the input folder. Images will be concetanated in alphabetical order.${NORMAL}"
@@ -33,13 +33,13 @@ OUTPUT=$(basename $(mktemp -u) | cut -d "." -f 2)".png"
 MODE="-append"
 #DELETE=""
 
-while getopts "uvhi:o:" O; do
+while getopts "hvpi:o:" O; do
 	case $O in
-		u) usage && exit ;;
+		h) usage && exit ;;
 		i) IDIR=$OPTARG ;;
 		o) OUTPUT=$OPTARG ;;
 		v) MODE="-append" ;;
-		h) MODE="+append" ;;
+		p) MODE="+append" ;;
 #		d) DELETE="true" ;;
 		*) echo -e "${RED}Unrecognized option, exiting...${NORMAL}" && exit 1 ;;
 	esac

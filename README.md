@@ -14,7 +14,7 @@ b.png (256x256):
 
 ![](example/b.png)
 
-	$ MergePics.sh -h
+	$ MergePics.sh -p
 
 output:
 ![](example/hFS9IIslYX.png)
