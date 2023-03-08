@@ -7,8 +7,11 @@ Merge seqentually named (1.png 2.png) images in $PWD to a single image horizonta
 	b.png
 
 a.jpeg (640x480):
+
 ![](example/a.jpeg)
+
 b.png (256x256):
+
 ![](example/b.png)
 
 	$ MergePics.sh -h
